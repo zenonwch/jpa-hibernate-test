@@ -1,0 +1,26 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="JpaHibernateTest">
+        <description>Persistence Unit for Tests</description>
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>my.projects.learning.jpa.domain.Category</class>
+        <class>my.projects.learning.jpa.domain.Topic</class>
+
+        <properties>
+            <!-- JPA properties -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1;MVCC=TRUE"/>
+            <property name="javax.persistence.jdbc.user" value="me"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <!-- Hibernate properties -->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
